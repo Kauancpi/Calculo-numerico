@@ -1,3 +1,6 @@
+import sys
+sys.path.append("Funcoes_importantes")
+
 
 import zerosfuncoes as zf
 import matplotlib.pyplot as plt
