@@ -3,8 +3,6 @@ sys.path.append("Funcoes_importantes")
 
 import zerosfuncoes as zf
 import numpy as np
-import matplotlib.pyplot as plt
-
 def f(x,re):
     return(4*np.log10(re*np.sqrt(x))-0.4-1/(np.sqrt(x)))
 
