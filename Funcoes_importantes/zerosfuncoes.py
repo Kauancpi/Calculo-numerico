@@ -20,15 +20,10 @@
 ⠀⠀⠀⠀⠀⠀⠀⠈⠛⠻⠿⠿⠿⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
 """
-import math as mt
-from math import cos, fabs
+from math import fabs
 import numpy as np
-import matplotlib.pyplot as plt
-import sympy as sp
 
-
-
-
+#metodo da bisseccao
 def bissec(f,a,b, dx, iteracoes):
     x=0
     media = (b+a)/2
