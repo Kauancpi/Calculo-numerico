@@ -1,29 +1,8 @@
-"""
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⣤⣤⣤⣤⣶⣦⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⡿⠛⠉⠙⠛⠛⠛⠛⠻⢿⣿⣷⣤⡀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⠋⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⠈⢻⣿⣿⡄⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⣸⣿⡏⠀⠀⠀⣠⣶⣾⣿⣿⣿⠿⠿⠿⢿⣿⣿⣿⣄⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⣿⣿⠁⠀⠀⢰⣿⣿⣯⠁⠀⠀⠀⠀⠀⠀⠀⠈⠙⢿⣷⡄⠀
-⠀⠀⣀⣤⣴⣶⣶⣿⡟⠀⠀⠀⢸⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣷⠀
-⠀⢰⣿⡟⠋⠉⣹⣿⡇⠀⠀⠀⠘⣿⣿⣿⣿⣷⣦⣤⣤⣤⣶⣶⣶⣶⣿⣿⣿⠀
-⠀⢸⣿⡇⠀⠀⣿⣿⡇⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⠀
-⠀⣸⣿⡇⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠉⠻⠿⣿⣿⣿⣿⡿⠿⠿⠛⢻⣿⡇⠀⠀
-⠀⣿⣿⠁⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣧⠀⠀
-⠀⣿⣿⠀⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⠀⠀
-⠀⣿⣿⠀⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⠀⠀
-⠀⢿⣿⡆⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡇⠀⠀
-⠀⠸⣿⣧⡀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠃⠀⠀
-⠀⠀⠛⢿⣿⣿⣿⣿⣇⠀⠀⠀⠀⣰⣿⣿⣷⣶⣶⣶⣶⠶⠀⢠⣿⣿⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⣿⣿⠀⠀⠀⠀⠀⣿⣿⡇⠀⣽⣿⡏⠁⠀⠀⢸⣿⡇⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⣿⣿⠀⠀⠀⠀⠀⣿⣿⡇⠀⢹⣿⡆⠀⠀⠀⣸⣿⠇⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⢿⣿⣦⣄⣀⣠⣴⣿⣿⠁⠀⠈⠻⣿⣿⣿⣿⡿⠏⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠈⠛⠻⠿⠿⠿⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-"""
 from math import fabs
 import numpy as np
 
 #metodo da bisseccao
+#f= funcao, a = menor valor, b = maior valor, dx= tolerancia, iteracoes = iteracoes
 def bissec(f,a,b, dx, iteracoes):
     x=0
     media = (b+a)/2
@@ -42,6 +21,7 @@ def bissec(f,a,b, dx, iteracoes):
         return(media)
     
 #Metodo da Falsa posicao
+#f=funcao, a = menor valor, b= maior valor, dx= tolerancia, iteracoes = iteracoes
 def fakeposition(f,a,b,dx,iteracoes):
     if f(a)*f(b) > 0:
         print("Não dá pra usar esse método")
@@ -63,6 +43,7 @@ def fakeposition(f,a,b,dx,iteracoes):
         return(mediap) 
     
 # Metodo do ponto fixo
+#f=funcao, phi = funcao de iteracao, inicial=chute inicial, dx = tolerancia, iteracoes = iteracoes
 def pontofixo(f,phi,inicial,dx,iteracoes):
     x_k=[inicial]
     x=0
@@ -77,6 +58,7 @@ def phinewton(x,f,der):
     return(x-f(x)/der(x))
 
 # metodo de Newton
+#f= funcao, der = derivada da funcao, inicial = chute inicial, dx = tolerancia, iteracoes= iteracoes
 def metodo_newton(f,der,inicial,dx,iteracoes):
     x_k=[inicial]
     x=0
@@ -91,6 +73,7 @@ def iteracao_secante(f,x0,x1):
     return(x1-f(x1)*(x1-x0)/(f(x1)-f(x0)))
 
 # Metodo da secante
+#f= funcao, x0,x1=chutes iniciais, dx=tolerancia, iteracoes=iteracoes
 def metodo_secante(f,x0,x1,dx,iteracoes):
     x_k=[x0,x1]
     x=0
@@ -99,6 +82,3 @@ def metodo_secante(f,x0,x1,dx,iteracoes):
         x_k.append(x_next)
         x+=1
     return(x_k[-1])
-
-
-
