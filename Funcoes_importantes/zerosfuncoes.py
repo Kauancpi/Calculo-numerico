@@ -73,7 +73,7 @@ def iteracao_secante(f,x0,x1):
     return(x1-f(x1)*(x1-x0)/(f(x1)-f(x0)))
 
 # Metodo da secante
-#f= funcao, x0,x1=chutes iniciais, dx=tolerancia, iteracoes=iteracoes
+#f= funcao, x0,x1=intervalo, x0<x1, dx=tolerancia, iteracoes=iteracoes
 def metodo_secante(f,x0,x1,dx,iteracoes):
     x_k=[x0,x1]
     x=0
