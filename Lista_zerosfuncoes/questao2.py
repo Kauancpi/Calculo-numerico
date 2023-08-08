@@ -6,7 +6,6 @@ import zerosfuncoes as zf
 from erro_relativo import erro_percentual
 import matplotlib.pyplot as plt
 import numpy as np
-import sympy as sp
 
 def g(x):
     return(2*(x**3)-11.7*(x**2)+17.7*x-5)
