@@ -50,8 +50,3 @@ def eliminacao_gauss(A,b,n):
             k-=matriz_a[i,j]*valores_de_x[j]
         valores_de_x[i]=k/matriz_a[i,i]
     return(valores_de_x)
-        
-x=np.array([3,1,6,2,1,3,1,1,1])
-b=np.array([2,7,4])
-
-print(eliminacao_gauss(x,b,3))
