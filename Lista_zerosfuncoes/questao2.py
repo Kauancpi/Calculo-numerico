@@ -18,15 +18,15 @@ def der(x):
 
 
 
-x=np.linspace(0,5,1000)
+x=np.linspace(3,4,1000)
 plt.plot(x,g(x))
 print("Graficamente vemos que a raiz eh 3.56 aproximadamente")
-print("A raiz encontrada pelo metodo do ponto fixo:" , zf.pontofixo(g,phi,3,0.01,3))
-print("Erro aproximado: "+ str(erro_percentual(zf.pontofixo(g,phi,3,0.01,3),zf.pontofixo(g,phi,3,0.01,100)))+"%")
-print("A raiz encontrada pelo metodo de newton:",zf.metodo_newton(g,der,3,0.01,3))
-print("Erro aproximado: "+ str(erro_percentual(zf.metodo_newton(g,der,3,0.01,3),zf.pontofixo(g,phi,3,0.01,100)))+"%")
-print("A raiz encontrada pelo metodo das secantes:", zf.metodo_secante(g,4,3,0.01,3))
-print("Erro aproximado: "+ str(erro_percentual(zf.metodo_secante(g,3,4,0.01,3),zf.pontofixo(g,phi,3,0.01,100)))+"%")
+print("A raiz encontrada pelo metodo do ponto fixo:" , zf.pontofixo(g,phi,3,0.01,100))
+print("Erro aproximado: "+ str(erro_percentual(zf.pontofixo(g,phi,3,0.01,100),zf.metodo_newton(g,der,3,0.01,100)))+"%")
+print("A raiz encontrada pelo metodo de newton:",zf.metodo_newton(g,der,3,0.01,100))
+print("Erro aproximado: "+ str(erro_percentual(zf.metodo_newton(g,der,3,0.001,100),zf.metodo_newton(g,der,3,0.001,100)))+"%")
+print("A raiz encontrada pelo metodo das secantes:", zf.metodo_secante(g,4,3,0.01,100))
+print("Erro aproximado: "+ str(erro_percentual(zf.metodo_secante(g,3,4,0.01,3),zf.metodo_newton(g,der,3,0.01,100)))+"%")
 plt.show()
 
 
