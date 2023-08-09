@@ -13,10 +13,10 @@ def triangular_superior(matriz_inicial,n):
         
         while(matriz[i,i]==0):
            
-           if k==n:
+           if k+1==n:
                return("Não dá pra triangular")
            
-           matriz[i,:],matriz[k+1,:]=matriz[k+1,:],matriz[i,:]
+           matriz[[i,k+1],:]=matriz[[k+1,i],:]
            k+=1
         
         for j in range(i+1,n):
@@ -38,10 +38,10 @@ def auxiliar_elim_gauss(matriz_inicial,b,n):
         k=i
         while(matriz[i,i]==0):
            
-           if k==n:
+           if k+1==n:
                return(False,False)
            
-           matriz[i,:],matriz[k+1,:]=matriz[k+1,:],matriz[i,:]
+           matriz[[i,k+1],:]=matriz[[k+1,i],:]
            k+=1
         
         for j in range(i+1,n):
@@ -76,3 +76,9 @@ def eliminacao_gauss(A,b,n):
         valores_de_x[i]=k/matriz_a[i,i]
     
     return(valores_de_x)
+
+
+
+matriz=np.array([0,2,3,0,5,6,7,8,9])
+
+print(triangular_superior(matriz,3))
