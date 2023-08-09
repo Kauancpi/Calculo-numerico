@@ -1,4 +1,3 @@
-from math import fabs
 import numpy as np
 
 #metodo da bisseccao
@@ -34,21 +33,21 @@ def fakeposition(f,a,b,dx,iteracoes):
         return(False)
     
     x=0
-    mediap = (a*fabs(f(b))+b*fabs(f(a)))/(fabs(f(a))+fabs(f(b)))
+    mediap = (a*abs(f(b))+b*abs(f(a)))/(abs(f(a))+abs(f(b)))
     
     while (f(mediap)>(dx) or f(mediap)<-(dx)) and x<iteracoes:
         
         if f(mediap)*f(a)<0:
             
             b=mediap
-            mediap = (a*fabs(f(mediap))+mediap*fabs(f(a)))/(fabs(f(a))+fabs(f(mediap)))
+            mediap = (a*abs(f(mediap))+mediap*abs(f(a)))/(abs(f(a))+abs(f(mediap)))
             x+=1
             continue
         
         elif f(mediap)*f(b)<0:
             
             a=mediap
-            mediap = (b*fabs(f(mediap))+mediap*fabs(f(b)))/(fabs(f(b))+fabs(f(mediap)))
+            mediap = (b*abs(f(mediap))+mediap*abs(f(b)))/(abs(f(b))+abs(f(mediap)))
             x+=1
             continue
     
@@ -62,7 +61,7 @@ def pontofixo(f,phi,inicial,dx,iteracoes):
     x_k=[inicial]
     x=0
     
-    while((fabs(f(x_k[-1]))>dx)and x<iteracoes):
+    while((abs(f(x_k[-1]))>dx)and x<iteracoes):
         
         x_next=phi(x_k[-1])
         x_k.append(x_next)
@@ -81,7 +80,7 @@ def metodo_newton(f,der,inicial,dx,iteracoes):
     x_k=[inicial]
     x=0
     
-    while((fabs(f(x_k[-1]))>dx) and x<iteracoes):
+    while((abs(f(x_k[-1]))>dx) and x<iteracoes):
         x_next=phinewton(x_k[-1],f,der)
         x_k.append(x_next)
         x+=1
@@ -99,7 +98,7 @@ def metodo_secante(f,x0,x1,dx,iteracoes):
     x_k=[x0,x1]
     x=0
     
-    while((fabs(f(x_k[-1]))>dx)and x<iteracoes):
+    while((abs(f(x_k[-1]))>dx)and x<iteracoes):
         x_next=iteracao_secante(f,x_k[-2],x_k[-1])
         x_k.append(x_next)
         x+=1
