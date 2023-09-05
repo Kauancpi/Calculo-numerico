@@ -1,9 +1,9 @@
 import numpy as np
 
 def pythag(a,b):
-    p=max(np.fabs(a),np.fabs(b))
-    q=min(np.fabs(a),np.fabs(b))
-    while(np.fabs(q)>0.00000000001):
+    p=max(abs(a),abs(b))
+    q=min(abs(a),abs(b))
+    while(abs(q)>0.00000000001):
         r=(q/p)**2
         s=r/(4+r)
         p=p+2*s*p
